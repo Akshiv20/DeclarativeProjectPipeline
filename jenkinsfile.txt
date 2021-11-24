@@ -1,0 +1,70 @@
+pipeline
+{
+agent any
+stages
+{
+ stage('GIT-COMMIT')
+ {
+  steps
+  {
+   echo "Source Code Download from the GITHUB to Declarative Pipeline......."
+  }
+ } 
+{
+ stage('Quality Assurance using  Sonar Qube')
+ {
+  steps
+  {
+   echo "This is Quality Assurance Project using Sonar Qube......."
+  }
+ } 
+stage('Compile')
+ {    
+  steps
+   {
+    echo "This is Compilation project run with maven tool ................"
+   }
+  }
+ stage('Build')
+ {    
+  steps
+   {
+    echo "This is Build project run with maven tool ................"
+   }
+  }
+stage('SonarQube')
+ {
+  steps
+  {
+    echo "This is the Quality assurance test for the project..........."
+  } 
+stage('Test')
+ {
+  steps
+  {
+    echo "This is Test project run with Selenium tool ................"
+  }
+ } 
+ stage('Deploy')
+ {    
+  steps
+   {
+    echo "This is Deploy project run with Docker tool ................"
+   }
+  }
+ stage('Monitor')
+ {    
+  steps
+   {
+    echo "This is Monitoring project run with Splunk tool ................"
+   }
+ stage('Declarative')
+ {    
+  steps
+   {
+    echo "Declarative pipeline successfully completed ................"
+   }
+
+  }
+}
+}
